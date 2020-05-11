@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light" style="background-color: #31363f;">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="upload" *ngIf="isAuth">Files</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li>
+        <a routerLink="/" style="color:rgb(184, 182, 182); background-color: #31363f;">Accueil</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="auth/signup" style="color:rgb(184, 182, 182); background-color: #31363f;">Créer un compte</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="auth/signin" style="color:rgb(184, 182, 182); background-color: #31363f;">Connexion</a>
+      </li>
+      <li>
+        <a (click)="onSignOut()" routerLink="/" *ngIf="isAuth" style="cursor:pointer">Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
